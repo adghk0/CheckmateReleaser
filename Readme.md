@@ -1,4 +1,4 @@
-# Checkmate Manager
+# Checkmate System
  데이터베이스와 FTP를 이용한 서버-클라이언트 구조와
 클라이언트 관리, 버전 관리, 업데이트 등의 기능을 구현합니다. 
 
