@@ -118,28 +118,3 @@ class SystemConnector(Connector):
 
     def refresh_config(self):
         self.config = self.get_config(self.client_id)
-
-    ### Client
-    # Client Informatation
-    def get_client_information(self, client_id):
-        row, data = self.db.select(
-            self.table_list['client_information'],
-            None,
-            {'client_id': client_id}
-        )
-        if row == 0:
-            result = None
-        else:
-            result = {
-                'client_id': data[0][0],
-                'client_name': data[0][1],
-                'program_version': data[0][2],
-                'operating_system': data[0][3],
-                'program_path': data[0][4],
-                'last_signal_time': data[0][5],
-                'last_signal_status': data[0][6]
-            }
-        return result
-
-    def set_client_information(self, client_id, **kwargs):
-        pass
