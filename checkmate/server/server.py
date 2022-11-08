@@ -8,7 +8,7 @@ from checkmate.common import SystemConnector
 class Server(SystemConnector):
     def __init__(self, config_file: str):
         super().__init__(config_file)
-        self.log.l(10, 'New server application started.')
+        self.log.l(10, 'New server application has started.')
 
     def program(self):
         return 'Server'
@@ -29,7 +29,7 @@ class Server(SystemConnector):
             self.ftp.upload_dir(path, os.path.join(remote_path, version), rapper=False)
             self.db.insert(version_table, {'version': version, 'description': description})
             self.db.commit()
-            self.log.l(3, f'client [{version}] is successfully released')
+            self.log.l(3, f'client [{version}] has successfully released')
         else:
             self.log.l(1, f'client [{version}] is alredy existed')
        
